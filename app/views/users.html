@@ -1,0 +1,128 @@
+<div class="container-fluid" ng-controller="UsersController">
+    <p>
+        <h4>Users Table</h4>
+    </p>
+    <table class="table table-hover" id="users">
+        <thead>
+            <tr>
+                <th ng-click="users.sort('id')">
+                    ID
+                    <span ng-show="users.sortType == 'id' && !users.sortReverse" class="glyphicon glyphicon-collapse-down"></span>
+                    <span ng-show="users.sortType == 'id' && users.sortReverse" class="glyphicon glyphicon-collapse-up"></span>
+                </th>
+                <th ng-click="users.sort('username')">
+                    Username
+                    <span ng-show="users.sortType === 'username' && !users.sortReverse" class="glyphicon glyphicon-collapse-down"></span>
+                    <span ng-show="users.sortType === 'username' && users.sortReverse" class="glyphicon glyphicon-collapse-up"></span>
+                </th>
+                <th ng-click="users.sort('email')">
+                    Email
+                    <span ng-show="users.sortType === 'email' && !users.sortReverse" class="glyphicon glyphicon-collapse-down"></span>
+                    <span ng-show="users.sortType === 'email' && users.sortReverse" class="glyphicon glyphicon-collapse-up"></span>
+                </th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users | orderBy:users.sortType:users.sortReverse | startFrom:users.pageItems*(users.currentPage-1) | limitTo:users.pageItems">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" ng-click="users.setSelected(user)"><span class="glyphicon glyphicon-plus"></span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-xs-6">
+            <button class="btn btn-success btn-sm" style: "display:block" ng-click="userform.open()">Create</button>
+        </div>
+        <div class="col-xs-6">
+            <pagination total-items="users.length" ng-model="users.currentPage" items-per-page="users.pageItems" max-items="5" class="pagination-sm pull-right" boundary-links="true" rotate="false" num-pages="users.numPage"></pagination>
+        </div>
+    </div>
+    <script type="text/ng-template" id="formUser.html">
+        <form name="userform.form" class="form-horizontal" ng-submit="userform.submit(users.selected)" novalidate>
+            <div class="modal-header">
+                <h3>Details</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">ID</label>
+                    <div id="id" class="col-sm-10">
+                        <p class="form-control-static">{{users.selected.id}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="title" ng-model="users.selected.name.title">
+                            <option></option>
+                            <option>mr</option>
+                            <option>ms</option>
+                            <option>mrs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="first" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="first" placeholder="John" ng-model="users.selected.name.first" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="last" placeholder="Doe" ng-model="users.selected.name.last" />
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error':userform.form.username.$invalid && (!userform.form.username.$pristine||userform.form.$submitted)}">
+                    <label for="username" class="col-sm-2 control-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="username" placeholder="johndoe" ng-model="users.selected.username" required />
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error':userform.form.email.$invalid && (!userform.form.email.$pristine||userform.form.$submitted)}">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" placeholder="test@domain.com" ng-model="users.selected.email" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" name="phone" placeholder="555-789-456" ng-model="users.selected.phone" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cell" class="col-sm-2 control-label">Cell</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" name="cell" placeholder="555-789-456" ng-model="users.selected.cell" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="street" class="col-sm-2 control-label">Location</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="street" placeholder="40 Rodeo Drive" ng-model="users.selected.location.street" />
+                        <input type="text" class="form-control" name="county" placeholder="Orange County" ng-model="users.selected.location.county" />
+                        <input type="text" class="form-control" name="state" placeholder="California" ng-model="users.selected.location.state" />
+                        <input type="text" class="form-control" name="zip" placeholder="92656" ng-model="users.selected.location.zip" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lang" class="col-sm-2 control-label">Lang</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="lang" placeholder="EN" ng-model="users.selected.lang" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" ng-if="!users.selected.id">Create</button>
+                <button type="submit" class="btn btn-primary" ng-if="users.selected.id">Modify</button>
+                <button type="button" class="btn btn-danger" ng-if="users.selected.id" ng-click="userform.delete(user.id)">Delete</button>
+                <button type="reset" class="btn btn-default" ng-click="userform.close()">Close</button>
+            </div>
+        </form>
+    </script>
+</div>

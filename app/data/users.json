@@ -1,0 +1,163 @@
+var data = {
+    'users': [{
+        'gender': 'male',
+        'name': {
+            'title': 'mr',
+            'first': 'jimmie',
+            'last': 'lane'
+        },
+        'location': {
+            'street': '7644 hickory creek dr',
+            'city': 'bowral',
+            'state': 'western australia',
+            'zip': '35914'
+        },
+        'email': 'jimmie.lane56@example.com',
+        'username': 'heavybird865',
+        'password': 'gggg',
+        'salt': '2TKWkj6q',
+        'md5': '86cf522cde434d3acd0b437bcccee3f0',
+        'sha1': '3b8eb51d1f65bf8f8e4b11a0a58eb485ff4bb38b',
+        'sha256': '2d13d6f5870c89645b99a196bf5d6b806f98d67092755c99570f590c0946fe18',
+        'registered': '1404155667',
+        'dob': '535672414',
+        'phone': '08-6568-9578',
+        'cell': '0413-472-215',
+        'TFN': '532622063',
+        'picture': {
+            'large': 'http://api.randomuser.me/portraits/men/0.jpg',
+            'medium': 'http://api.randomuser.me/portraits/med/men/0.jpg',
+            'thumbnail': 'http://api.randomuser.me/portraits/thumb/men/0.jpg'
+        },
+        'version': '0.6',
+        'nationality': 'AU'
+    }, {
+        'gender': 'male',
+        'name': {
+            'title': 'mr',
+            'first': 'steijn',
+            'last': 'bruining'
+        },
+        'location': {
+            'street': '6075 nicolaasweg',
+            'city': 'heemskerk',
+            'state': 'zeeland',
+            'zip': '85690'
+        },
+        'email': 'steijn.bruining92@example.com',
+        'username': 'ticklishmeercat455',
+        'password': 'games',
+        'salt': '44ucAlun',
+        'md5': 'a6f86b77ef57b8f802c62a8782a63609',
+        'sha1': '102eecb821e54edb6be1a10d55f4649dd0aa2e11',
+        'sha256': 'fe9cf00c9a1297454cd7ed5a403a8e33c2a9fa800667c272d08c1c809b9c7c83',
+        'registered': '977481984',
+        'dob': '76362013',
+        'phone': '(964)-904-8765',
+        'cell': '(591)-906-1281',
+        'BSN': '10974547',
+        'picture': {
+            'large': 'http://api.randomuser.me/portraits/men/7.jpg',
+            'medium': 'http://api.randomuser.me/portraits/med/men/7.jpg',
+            'thumbnail': 'http://api.randomuser.me/portraits/thumb/men/7.jpg'
+        },
+        'version': '0.6',
+        'nationality': 'NL'
+    }, {
+        'gender': 'female',
+        'name': {
+            'title': 'ms',
+            'first': 'tara',
+            'last': 'allen'
+        },
+        'location': {
+            'street': '2565 ash dr',
+            'city': 'sydney',
+            'state': 'south australia',
+            'zip': '15909'
+        },
+        'email': 'tara.allen94@example.com',
+        'username': 'yellowsnake548',
+        'password': 'freepass',
+        'salt': 'd7ZHuBkK',
+        'md5': '7e2c1c68c41b073a2c06baf236ab8ac2',
+        'sha1': 'f9f6ec41ff44aafd5195db8fe0a31c7be5f396dd',
+        'sha256': '4ecb76b00c57751c60cc55ef17feb2fde4fcaa1740e5ab5cf68c7d181882c730',
+        'registered': '1221935951',
+        'dob': '679665617',
+        'phone': '01-7949-3678',
+        'cell': '0435-088-079',
+        'TFN': '766552438',
+        'picture': {
+            'large': 'http://api.randomuser.me/portraits/women/82.jpg',
+            'medium': 'http://api.randomuser.me/portraits/med/women/82.jpg',
+            'thumbnail': 'http://api.randomuser.me/portraits/thumb/women/82.jpg'
+        },
+        'version': '0.6',
+        'nationality': 'AU'
+    }, {
+        'gender': 'female',
+        'name': {
+            'title': 'ms',
+            'first': 'angela',
+            'last': 'reyes'
+        },
+        'location': {
+            'street': '1308 o\'connell street',
+            'county': 'south dublin',
+            'state': 'hawaii',
+            'zip': '51989'
+        },
+        'email': 'angela.reyes83@example.com',
+        'username': 'purpleswan621',
+        'password': 'lakeside',
+        'salt': '4nm6XVay',
+        'md5': '8b760612266c1dfee2c5a832f8af3c1c',
+        'sha1': 'f68b92463f881add0a9b3507cc65741d25217197',
+        'sha256': '4eb06de575a10dcf031fe2c689d0854c6aa050de687b4fa5db36c124fdd7a785',
+        'registered': '1346938531',
+        'dob': '1336139275',
+        'phone': '031-486-2632',
+        'cell': '081-730-6297',
+        'PPS': '5557042T',
+        'picture': {
+            'large': 'http://api.randomuser.me/portraits/women/62.jpg',
+            'medium': 'http://api.randomuser.me/portraits/med/women/62.jpg',
+            'thumbnail': 'http://api.randomuser.me/portraits/thumb/women/62.jpg'
+        },
+        'version': '0.6',
+        'nationality': 'IE'
+    }, {
+        'gender': 'female',
+        'name': {
+            'title': 'mrs',
+            'first': 'jen',
+            'last': 'simmons'
+        },
+        'location': {
+            'street': '4639 victoria street',
+            'city': 'portsmouth',
+            'state': 'south glamorgan',
+            'postcode': 'N4 7QJ'
+        },
+        'email': 'jen.simmons27@example.com',
+        'username': 'organicrabbit389',
+        'password': 'cameron1',
+        'salt': '3G1htka7',
+        'md5': '37a7a779698f7ad5374520a734ecca64',
+        'sha1': 'daa78c5ceb872050fa903359a697af9ef958ec6a',
+        'sha256': '4239532da395d13d6b3d776c384894b9515bc6376ef47d6420b82c5d7148ca7a',
+        'registered': '933075395',
+        'dob': '395637894',
+        'phone': '016974 97372',
+        'cell': '0770-351-190',
+        'NINO': 'EJ 67 79 16 O',
+        'picture': {
+            'large': 'http://api.randomuser.me/portraits/women/62.jpg',
+            'medium': 'http://api.randomuser.me/portraits/med/women/62.jpg',
+            'thumbnail': 'http://api.randomuser.me/portraits/thumb/women/62.jpg'
+        },
+        'version': '0.6',
+        'nationality': 'GB'
+    }]
+}
